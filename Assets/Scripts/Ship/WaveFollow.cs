@@ -10,6 +10,14 @@ public class WaveFollow : MonoBehaviour
     public float yOffset;
     public GameObject boatGraphic;
 
+
+    public void Start()
+    {
+        if (ocean == null)
+        {
+            this.ocean = this.GetComponentInParent<Ocean>();
+        }
+    }
 	
 	// Update is called once per frame
 	void LateUpdate ()
