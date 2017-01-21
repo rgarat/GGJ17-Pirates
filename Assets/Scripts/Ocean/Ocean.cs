@@ -13,9 +13,10 @@ namespace Pirates.Ocean
         public Vector3 GetWithHeight(Vector3 pos)
         {
             float height = 0;
-            foreach (var wave in waves)
+            for (var index = 0; index < waves.Count; index++)
             {
-                height+= wave.WaveValue(pos);
+                var wave = waves[index];
+                height += wave.WaveValue(pos);
             }
 
             pos.y = height;
@@ -26,8 +27,9 @@ namespace Pirates.Ocean
         public void Update()
         {
             var delta = Time.deltaTime;
-            foreach (var wave in waves)
+            for (var index = 0; index < waves.Count; index++)
             {
+                var wave = waves[index];
                 wave.Update(delta);
 
                 if (Input.GetMouseButtonDown(0) && wave.waveType == Waves.WaveTipe.SingleWave)
@@ -35,8 +37,6 @@ namespace Pirates.Ocean
                     wave.timeSinceStart = 0;
                 }
             }
-
-
         }
 
 
@@ -52,9 +52,33 @@ namespace Pirates.Ocean
                 Gizmos.DrawSphere(wave.source, 2);
             }
 
+
+            Gizmos.color = Color.grey;
+
+            var bounds = new Rect();
+            bounds.min = new Vector2(0, 0);
+            bounds.max = this.size;
+
+            if (!Application.isPlaying)
+            {
+                Gizmos.DrawCube(new Vector3(this.size.x / 2.0f, 0, this.size.y / 2.0f), new Vector3(this.size.x, 0.1f, this.size.y));
+            }
+
+
+
+
             Gizmos.color = oldColor;
 
+
+
+
+
+
             Gizmos.matrix = oldMatrix;
+
+
+
+
         }
     }
 }

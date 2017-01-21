@@ -56,6 +56,8 @@ namespace Pirates.Ocean.OceanView
                 this.CreateTempArrays(vertexNeeded);
             }
 
+            Color32 color = Color.blue;
+
             int vertexIndex = 0;
             for (int xIndex = 0; xIndex < oceanWidth; xIndex++)
             {
@@ -88,14 +90,16 @@ namespace Pirates.Ocean.OceanView
             for (int i = 0; i < this.vertices.Length; i++)
             {
                 triangles[i] = i;
-                colors[i] = Color.blue;
+               // colors[i] = Color.blue;
             }
+
+
 
 
             var mesh = usingMesh1 ? mesh1 : mesh2;
             mesh.vertices = this.vertices;
             //mesh.uv = this.uvs;
-            mesh.colors32 = this.colors;
+          //  mesh.colors32 = this.colors;
             mesh.SetTriangles(this.triangles, 0);
 
             mesh.RecalculateNormals();
@@ -114,7 +118,6 @@ namespace Pirates.Ocean.OceanView
             this.uvs = new Vector2[vertices.Length];
             this.triangles = new int[vertexNeeded];
         }
-
 
     }
 

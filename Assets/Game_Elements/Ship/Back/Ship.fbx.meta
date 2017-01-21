@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: de5a8d28f77853f4c8ccabad21603ca2
+timeCreated: 1483821844
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Agujero_Ancla
+    100002: Aleta
+    100004: Ancla
+    100006: Armazon
+    100008: Bandera
+    100010: Base
+    100012: Base 1
+    100014: Base 2
+    100016: Base_end
+    100018: Base_end 1
+    100020: Base_end 2
+    100022: Cadena
+    100024: Escalera
+    100026: Esqueleto_Bandera
+    100028: Esqueleto_Vela_Chica
+    100030: Esqueleto_Vela_Grande
+    100032: Extremo
+    100034: Extremo_end
+    100036: "Marco_ca\xF1on"
+    100038: Mastil_Chico
+    100040: Mastil_Grande
+    100042: Medio
+    100044: Medio_end
+    100046: Palo_Ch_1
+    100048: Palo_Ch_2
+    100050: Palo_G_1
+    100052: Palo_G_2
+    100054: Puerta
+    100056: //RootNode
+    100058: Timon
+    100060: Vela
+    100062: Vela 1
+    100064: Vela_Ch
+    100066: Vela_end
+    100068: Vela_end 1
+    100070: Vela_G
+    100072: Ventanas
+    400000: Agujero_Ancla
+    400002: Aleta
+    400004: Ancla
+    400006: Armazon
+    400008: Bandera
+    400010: Base
+    400012: Base 1
+    400014: Base 2
+    400016: Base_end
+    400018: Base_end 1
+    400020: Base_end 2
+    400022: Cadena
+    400024: Escalera
+    400026: Esqueleto_Bandera
+    400028: Esqueleto_Vela_Chica
+    400030: Esqueleto_Vela_Grande
+    400032: Extremo
+    400034: Extremo_end
+    400036: "Marco_ca\xF1on"
+    400038: Mastil_Chico
+    400040: Mastil_Grande
+    400042: Medio
+    400044: Medio_end
+    400046: Palo_Ch_1
+    400048: Palo_Ch_2
+    400050: Palo_G_1
+    400052: Palo_G_2
+    400054: Puerta
+    400056: //RootNode
+    400058: Timon
+    400060: Vela
+    400062: Vela 1
+    400064: Vela_Ch
+    400066: Vela_end
+    400068: Vela_end 1
+    400070: Vela_G
+    400072: Ventanas
+    2300000: Agujero_Ancla
+    2300002: Aleta
+    2300004: Ancla
+    2300006: Armazon
+    2300008: Cadena
+    2300010: Escalera
+    2300012: "Marco_ca\xF1on"
+    2300014: Mastil_Chico
+    2300016: Mastil_Grande
+    2300018: Palo_Ch_1
+    2300020: Palo_Ch_2
+    2300022: Palo_G_1
+    2300024: Palo_G_2
+    2300026: Puerta
+    2300028: Timon
+    2300030: Ventanas
+    3300000: Agujero_Ancla
+    3300002: Aleta
+    3300004: Ancla
+    3300006: Armazon
+    3300008: Cadena
+    3300010: Escalera
+    3300012: "Marco_ca\xF1on"
+    3300014: Mastil_Chico
+    3300016: Mastil_Grande
+    3300018: Palo_Ch_1
+    3300020: Palo_Ch_2
+    3300022: Palo_G_1
+    3300024: Palo_G_2
+    3300026: Puerta
+    3300028: Timon
+    3300030: Ventanas
+    4300000: Bandera
+    4300002: Vela_Ch
+    4300004: Vela_G
+    4300006: Cadena
+    4300008: Agujero_Ancla
+    4300010: Ancla
+    4300012: Puerta
+    4300014: Ventanas
+    4300016: Palo_Ch_1
+    4300018: Palo_Ch_2
+    4300020: Palo_G_1
+    4300022: Palo_G_2
+    4300024: Aleta
+    4300026: Escalera
+    4300028: Mastil_Grande
+    4300030: Mastil_Chico
+    4300032: "Marco_ca\xF1on"
+    4300034: Timon
+    4300036: Armazon
+    9500000: //RootNode
+    13700000: Bandera
+    13700002: Vela_Ch
+    13700004: Vela_G
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

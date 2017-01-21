@@ -40,8 +40,14 @@ namespace Pirates.Ocean
             //Sinus waves
         public float WaveValue(Vector3 position)
         {
+            float dx = position.x - source.x;
+            float dy = position.y - source.y;
+            float dz = position.z - source.z;
 
-            float distance = (position - source).magnitude;
+
+            float distance = Mathf.Sqrt(dx * dx + dy * dy + dz * dz);
+
+            //float distance = (position - source).magnitude;
 
             //Using only x or z will produce straight waves
             //Using only y will produce an up/down movement
