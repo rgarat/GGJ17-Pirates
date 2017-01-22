@@ -5238,9 +5238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootForce: 0
-  bulletDamage: 5
+  bulletDamage: 12
   shoots: 3
-  waitForShoot: 5
+  waitForShoot: 3
   chargeShoot: 0.1
   maxChargeShoot: 10
   minChargeShoot: 5
@@ -5263,6 +5263,7 @@ MonoBehaviour:
   barrelPointAdd: {fileID: 468808}
   controller: 0
   fireSound: {fileID: 8300000, guid: c2df569148284b44bb8b7953303246bf, type: 3}
+  waitForBarrel: 7
 --- !u!114 &11473028
 MonoBehaviour:
   m_ObjectHideFlags: 1

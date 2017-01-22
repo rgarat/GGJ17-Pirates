@@ -33,6 +33,9 @@ public class Fire : MonoBehaviour {
 	AudioSource audioSource;
     [NonSerialized] public GameController gameController;
 
+    private float barrelTimer;
+    public float waitForBarrel;
+
 	void Start(){
 		audioSource = gameObject.GetComponent<AudioSource> ();
 		shootForce = minChargeShoot;
@@ -84,6 +87,17 @@ public class Fire : MonoBehaviour {
 				timer += Time.deltaTime;
 			}
 		}
+
+	    if (barrels < 5)
+	    {
+	        barrelTimer += Time.deltaTime;
+	        if (barrelTimer > waitForBarrel)
+	        {
+	            barrelTimer = 0;
+	            barrels++;
+	        }
+
+	    }
 
 	}
 
