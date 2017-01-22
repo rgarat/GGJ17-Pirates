@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     public Camera cameraPrefab;
     public Transform[] startPositons;
 
-    public BoatHud[] huds;
+    public PlayerWindow[] playerWindows;
 
 
 
@@ -21,6 +21,13 @@ public class GameController : MonoBehaviour
 
     public Rect[] cameraBounds;
 
+    private Vector2[] hudMultiplier = new[]
+    {
+        new Vector2(1, 1),
+        new Vector2(-1, 1),
+        new Vector2(1, -1),
+        new Vector2(-1, -1),
+    };
 
 	// Use this for initialization
 	void Start ()
@@ -44,8 +51,25 @@ public class GameController : MonoBehaviour
 	        var boatFire = go.GetComponent<Fire>();
 	        boatFire.controller = boatController.controller;
 
-	        var hud = huds[i];
-	        hud.life = go.GetComponent<Life>();
+	        var boatLife = go.GetComponent<Life>();
+
+	        var playerWindow = this.playerWindows[i];
+	        playerWindow.hud.life = boatLife;
+	        playerWindow.hud.fire = boatFire;
+
+	        var hudTransform = playerWindow.hud.GetComponent<RectTransform>();
+	        var mainHudTransform = playerWindows[0].hud.GetComponent<RectTransform>();
+	        var hudLocalPosition = mainHudTransform.localPosition;
+	        hudLocalPosition.x *= hudMultiplier[i].x;
+	        hudLocalPosition.y *= hudMultiplier[i].y;
+
+	        hudTransform.localPosition = hudLocalPosition;
+
+	        var hudScale = mainHudTransform.localScale;
+	        hudScale.x *= hudMultiplier[i].x;
+	        hudScale.y *= hudMultiplier[i].y;
+
+	        hudTransform.localScale = hudScale;
 
 	        go.tag = "Player" + (i + 1);
 	    }
