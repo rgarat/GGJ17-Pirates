@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XboxCtrlrInput;
 
 public class Movimiento_Barco : MonoBehaviour {
 	
@@ -19,18 +20,29 @@ public class Movimiento_Barco : MonoBehaviour {
 
 	private Rigidbody rig;
 
+    public int playerNumber;
+    public XboxController controller;
+
 	void Start () {
 		rig = GetComponent<Rigidbody> ();
 	}
 
+
+
 	void Update () {
-		
-		if (Input.GetButton ("Fire2")) {
+
+
+	    if (XCI.GetButton(XboxButton.A, controller))
+	    {
+
+
+		//if (Input.GetButton (inputPrefix + "_Action1")) {
 			rig.AddRelativeForce (Vector3.forward * aceleracion, ForceMode.Acceleration);
 			rig.velocity = Vector3.ClampMagnitude (rig.velocity, velocidadMaxima);
 		}
 
-		Vector3 targetDir = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
+		//Vector3 targetDir = new Vector3 (Input.GetAxis (inputPrefix + "_Horizontal"), 0, -Input.GetAxis (inputPrefix + "_Vertical"));
+		Vector3 targetDir = new Vector3 (XCI.GetAxis(XboxAxis.LeftStickX, controller), 0, XCI.GetAxis(XboxAxis.LeftStickY, controller));
 
 		if (targetDir.magnitude > 0.1f) {
 			if (rig.velocity.magnitude > 0) {
@@ -43,7 +55,6 @@ public class Movimiento_Barco : MonoBehaviour {
 			transform.forward = newDir;
 			rig.velocity = transform.forward * rig.velocity.magnitude;
 		}
-
 	}
 
 }

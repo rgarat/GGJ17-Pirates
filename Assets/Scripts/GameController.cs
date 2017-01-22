@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Pirates.Ocean;
 using UnityEngine;
+using XboxCtrlrInput;
 
 public class GameController : MonoBehaviour
 {
@@ -36,8 +37,10 @@ public class GameController : MonoBehaviour
 
 	        var camera = cameraGO.GetComponent<Camera>();
 	        camera.rect = cameraBounds[i];
-	    }
 
+	        var boatController = go.GetComponent<Movimiento_Barco>();
+	        boatController.controller = XboxController.First + i;
+	    }
 	}
 	
 	// Update is called once per frame
