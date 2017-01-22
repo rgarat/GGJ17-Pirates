@@ -21,12 +21,20 @@ public class GameController : MonoBehaviour
 
     public Rect[] cameraBounds;
 
-    private Vector2[] hudMultiplier = new[]
+    private Vector2[] hudPosMultiplier = new[]
     {
         new Vector2(1, 1),
         new Vector2(-1, 1),
         new Vector2(1, -1),
         new Vector2(-1, -1),
+    };
+
+    private Vector2[] hudScaleMultiplier = new[]
+    {
+        new Vector2(1, 1),
+        new Vector2(-1, 1),
+        new Vector2(1, 1),
+        new Vector2(-1, 1),
     };
 
 	// Use this for initialization
@@ -60,14 +68,14 @@ public class GameController : MonoBehaviour
 	        var hudTransform = playerWindow.hud.GetComponent<RectTransform>();
 	        var mainHudTransform = playerWindows[0].hud.GetComponent<RectTransform>();
 	        var hudLocalPosition = mainHudTransform.localPosition;
-	        hudLocalPosition.x *= hudMultiplier[i].x;
-	        hudLocalPosition.y *= hudMultiplier[i].y;
+	        hudLocalPosition.x *= hudPosMultiplier[i].x;
+	        hudLocalPosition.y *= hudPosMultiplier[i].y;
 
 	        hudTransform.localPosition = hudLocalPosition;
 
 	        var hudScale = mainHudTransform.localScale;
-	        hudScale.x *= hudMultiplier[i].x;
-	        hudScale.y *= hudMultiplier[i].y;
+	        hudScale.x *= hudScaleMultiplier[i].x;
+	        hudScale.y *= hudScaleMultiplier[i].y;
 
 	        hudTransform.localScale = hudScale;
 
