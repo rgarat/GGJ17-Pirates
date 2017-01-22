@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour
 
     public Rect[] cameraBounds;
 
+	public Texture[] shipsTextures;
+
     private Vector2[] hudPosMultiplier = new[]
     {
         new Vector2(1, 1),
@@ -61,6 +63,10 @@ public class GameController : MonoBehaviour
 	        var lookAt = cameraGO.GetComponent<LookAtCamera>();
 	        lookAt.target = go.transform;
 	        lookAt.ocean = ocean;
+
+			if (shipsTextures.Length > 0) {
+				go.GetComponentInChildren<Renderer> ().material.mainTexture = shipsTextures [i];
+			}
 
 	        var camera = cameraGO.GetComponent<Camera>();
 	        camera.rect = cameraBounds[i];
