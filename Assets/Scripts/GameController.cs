@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HUD;
 using Pirates.Ocean;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using XboxCtrlrInput;
 
 public class GameController : MonoBehaviour
@@ -90,16 +91,25 @@ public class GameController : MonoBehaviour
 	        boatController.gameController = this;
 	    }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	    if (XCI.GetButtonDown(XboxButton.Start, XboxController.All))
-	    {
-	        paused = !paused;
-	        Debug.LogFormat("Detected start: {0}", paused);
-	        optionsScreen.SetActive(paused);
-	        Time.timeScale = paused ?0 : 1;
 
-	    }
-	}
+	// Update is called once per frame
+    void Update()
+    {
+        if (XCI.GetButtonDown(XboxButton.Start, XboxController.All) || (paused && XCI.GetButtonDown(XboxButton.A, XboxController.All)) )
+        {
+            paused = !paused;
+            Debug.LogFormat("Detected start: {0}", paused);
+            optionsScreen.SetActive(paused);
+            Time.timeScale = paused ? 0 : 1;
+            return;
+        }
+
+        if (XCI.GetButtonDown(XboxButton.B, XboxController.All))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 1;
+        }
+    }
+
+
 }
