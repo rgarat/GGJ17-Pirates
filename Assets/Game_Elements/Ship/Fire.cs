@@ -57,7 +57,7 @@ public class Fire : MonoBehaviour {
 			}
 		}
 
-		if (XCI.GetButton(XboxButton.B, controller) && barrels > 0) {
+		if (XCI.GetButtonDown(XboxButton.B, controller) && barrels > 0) {
 			barrels--;
 			Instantiate (barrel, barrelPointAdd.transform.position, barrelPointAdd.transform.rotation);
 		}
