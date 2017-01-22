@@ -39,8 +39,12 @@ public class GameController : MonoBehaviour
     };
 
 
+    public Sprite[] portraits;
+
     public bool paused;
     public GameObject optionsScreen;
+
+
 
 	// Use this for initialization
 	void Start ()
@@ -85,6 +89,8 @@ public class GameController : MonoBehaviour
 	        hudTransform.localScale = hudScale;
 
 	        go.tag = "Player" + (i + 1);
+
+	        playerWindow.hud.SetPortrait(portraits[i]);
 
 	        boatFire.gameController = this;
 	        boatLife.gameController = this;

@@ -13,6 +13,8 @@ namespace HUD
 
         int oldShootsAvailable;
 
+        public Image portraitImage;
+
         public void LateUpdate()
         {
             healthSlider.value = ((float)life.life) / life.maxLife;
@@ -30,6 +32,11 @@ namespace HUD
             }
 
             oldShootsAvailable = fire.shoots;
+        }
+
+        public void SetPortrait(Sprite sprite)
+        {
+            portraitImage.sprite = sprite;
         }
     }
 }

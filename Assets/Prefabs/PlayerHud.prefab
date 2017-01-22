@@ -483,6 +483,7 @@ MonoBehaviour:
   - {fileID: 114510692581195464}
   life: {fileID: 0}
   fire: {fileID: 0}
+  portraitImage: {fileID: 114279182175604528}
 --- !u!114 &114322870159769346
 MonoBehaviour:
   m_ObjectHideFlags: 1
