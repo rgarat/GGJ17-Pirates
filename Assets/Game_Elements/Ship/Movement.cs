@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour {
 	        return;
 	    }
 
+
+
 	    if (XCI.GetButton(XboxButton.A, controller))
 	    {
             rig.AddRelativeForce (Vector3.forward * aceleracion, ForceMode.Acceleration);

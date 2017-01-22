@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
 	    cameras = new Camera[startPositons.Length];
 
 
+
 	    for (int i = 0; i < startPositons.Length; i++)
 	    {
 	        var go = GameObject.Instantiate(boatPrefab, ocean.transform);
@@ -59,6 +60,7 @@ public class GameController : MonoBehaviour
 	        var cameraGO = GameObject.Instantiate(cameraPrefab);
 	        var lookAt = cameraGO.GetComponent<LookAtCamera>();
 	        lookAt.target = go.transform;
+	        lookAt.ocean = ocean;
 
 	        var camera = cameraGO.GetComponent<Camera>();
 	        camera.rect = cameraBounds[i];
@@ -96,6 +98,8 @@ public class GameController : MonoBehaviour
 	        boatLife.gameController = this;
 	        boatController.gameController = this;
 	    }
+
+
 	}
 
 	// Update is called once per frame
@@ -110,10 +114,18 @@ public class GameController : MonoBehaviour
             return;
         }
 
-        if (XCI.GetButtonDown(XboxButton.B, XboxController.All))
+        if (paused && XCI.GetButtonDown(XboxButton.B, XboxController.All))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1;
+        }
+
+        if (XCI.GetButton(XboxButton.Back))
+        {
+            foreach (var barco in GameObject.FindObjectsOfType<Movement>())
+            {
+                barco.velocidadMaxima = 10;
+            }
         }
     }
 

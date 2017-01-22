@@ -10,6 +10,8 @@ namespace Pirates.Ocean
 
         public List<Waves> waves;
 
+        public BoxCollider cameraBounds;
+
         public Vector3 GetWithHeight(Vector3 pos)
         {
             float height = 0;
@@ -65,8 +67,6 @@ namespace Pirates.Ocean
             }
 
 
-
-
             Gizmos.color = oldColor;
 
 
@@ -75,10 +75,11 @@ namespace Pirates.Ocean
 
 
             Gizmos.matrix = oldMatrix;
+        }
 
-
-
-
+        public Bounds CameraBounds
+        {
+            get { return cameraBounds.bounds; }
         }
     }
 }
