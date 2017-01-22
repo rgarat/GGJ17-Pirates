@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.71, y: 0.2368164, z: -0.61279297}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4458769584110142}
@@ -122,8 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  minY: -4
+  minY: -1.5
   particleHit: {fileID: 1000013744961956, guid: e077a6891e64dc0468e202cdb84978bb,
+    type: 2}
+  particleWater: {fileID: 1000013606029200, guid: 185ed93cd2061a746aaa014f5ab5f238,
     type: 2}
 --- !u!114 &11488050
 MonoBehaviour:
