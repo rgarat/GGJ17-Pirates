@@ -1,14 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class Life : MonoBehaviour {
 	public int life = 100;
+
+    [NonSerialized] public int maxLife;
+
 	public float limitFall;
 	public float incl;
 	public float limitInc;
 
 	public float velFall;
 	Vector3 pos;
+
+    void Start()
+    {
+        maxLife = life;
+    }
 
 	void Update(){
 		if (life <= 0) {

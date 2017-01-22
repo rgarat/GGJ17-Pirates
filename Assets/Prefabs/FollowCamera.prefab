@@ -20,13 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4350111702504774}
   - component: {fileID: 20883981995431048}
-  - component: {fileID: 92729057716778904}
-  - component: {fileID: 124433893683474242}
-  - component: {fileID: 81660621100106832}
   - component: {fileID: 114085994073133526}
   m_Layer: 0
   m_Name: FollowCamera
-  m_TagString: MainCamera
+  m_TagString: PlayerCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +65,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967263
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -78,20 +75,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &81660621100106832
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222845328897008}
-  m_Enabled: 1
---- !u!92 &92729057716778904
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222845328897008}
-  m_Enabled: 1
 --- !u!114 &114085994073133526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,10 +88,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: 30, z: -30}
---- !u!124 &124433893683474242
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222845328897008}
-  m_Enabled: 1

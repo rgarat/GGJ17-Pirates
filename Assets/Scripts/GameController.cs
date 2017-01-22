@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using HUD;
 using Pirates.Ocean;
 using UnityEngine;
 using XboxCtrlrInput;
@@ -11,22 +12,22 @@ public class GameController : MonoBehaviour
     public Camera cameraPrefab;
     public Transform[] startPositons;
 
+    public BoatHud[] huds;
+
+
 
     public Camera[] cameras;
     public Ocean ocean;
 
-    private Rect[] cameraBounds = new Rect[]
-    {
-        new Rect(0, 0, 0.5f, 0.5f),
-        new Rect(0, 0.5f, 0.5f, 0.5f),
-        new Rect(0.5f, 0.5f, 0.5f, 0.5f),
-        new Rect(0.5f, 0f, 0.5f, 0.5f),
-    };
+    public Rect[] cameraBounds;
 
 
 	// Use this for initialization
 	void Start ()
 	{
+	    cameras = new Camera[startPositons.Length];
+
+
 	    for (int i = 0; i < startPositons.Length; i++)
 	    {
 	        var go = GameObject.Instantiate(boatPrefab, ocean.transform);
@@ -42,6 +43,9 @@ public class GameController : MonoBehaviour
 	        boatController.controller = XboxController.First + i;
 	        var boatFire = go.GetComponent<Fire>();
 	        boatFire.controller = boatController.controller;
+
+	        var hud = huds[i];
+	        hud.life = go.GetComponent<Life>();
 
 	        go.tag = "Player" + (i + 1);
 	    }
