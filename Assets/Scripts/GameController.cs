@@ -37,6 +37,10 @@ public class GameController : MonoBehaviour
         new Vector2(-1, 1),
     };
 
+
+    public bool paused;
+    public GameObject optionsScreen;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -80,11 +84,22 @@ public class GameController : MonoBehaviour
 	        hudTransform.localScale = hudScale;
 
 	        go.tag = "Player" + (i + 1);
+
+	        boatFire.gameController = this;
+	        boatLife.gameController = this;
+	        boatController.gameController = this;
 	    }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+	    if (XCI.GetButtonDown(XboxButton.Start, XboxController.All))
+	    {
+	        paused = !paused;
+	        Debug.LogFormat("Detected start: {0}", paused);
+	        optionsScreen.SetActive(paused);
+	        Time.timeScale = paused ?0 : 1;
+
+	    }
 	}
 }

@@ -14,6 +14,8 @@ public class Life : MonoBehaviour {
 	public float velFall;
 	Vector3 pos;
 
+    [NonSerialized] public GameController gameController;
+
     void Start()
     {
         maxLife = life;
