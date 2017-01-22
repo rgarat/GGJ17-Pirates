@@ -1,0 +1,25 @@
+Script para Captura de pantalla del Proyecto.
+
+Colocar prefab "ScreeshotPrefab" en la escena donde se quiere tomar capturas.
+
+Tipo Captura: seleccione el metodo de captura de pantalla.
+-Ninguna: no tomara screenshots.
+-Simple: toma un screenshot cada vez que se presione la tecla asignada.
+-Secuencia: Toma Capturas de forma secuencial. Tocar la tecla asignada para comenzar, tocar nuevamente para finalizar.
+
+Formato Imagen: puede seleccionar en que formato de imagen sera guardada la captura.
+
+Tecla: puede seleccionar cual sera la tecla para tomar una captura o comenzar y finalizar la captura en secuencia.
+
+Nombre Screenshot: puede editar el nombre de la captura a la hora de ser guardada.
+
+Directorio: ubicaciona a guardar los screenshots
+-Proyecto: guarda los screenshots en la carpeta principal del proyecto
+-Assets: guarda los screenshots en la carpeta Assets del proyecto
+-Personalizado: guarda los screenshots en la la ruta espesificada en "Directorio Personalizado".
+
+Directorio Personalizado: directorio a guardar los screenshots en caso de que en "Directorio" este seleccionado "Personalizado".
+
+NOTAS:
+Cada captura tiene se guarda con un ID diferente, puede tomar varias capturas por ejecucion del proyecto.
+En "Directorio Personalizado" se debe de colocar una ruta correcta, ejemplo: "C:/Users/userName/Desktop" (sin las comillas).

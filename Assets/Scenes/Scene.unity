@@ -281,6 +281,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 950e8ba667504b04a9940254b5555667, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &360570181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 147070, guid: 7fbeb2d9adf3a224fad93f644c7c5265, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 360570183}
+  - component: {fileID: 360570182}
+  m_Layer: 0
+  m_Name: ScreeshotPrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &360570182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11451018, guid: 7fbeb2d9adf3a224fad93f644c7c5265,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360570181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c73cf71fba08d4484b28ae0d41de64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoCaptura: 1
+  formatoImagen: 0
+  tecla: 32
+  NombreScreenshot: Screenshot
+  directorio: 2
+  directorioPersonalizado: C:\Users\ruben\Desktop\GGJPirates
+--- !u!4 &360570183
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 475818, guid: 7fbeb2d9adf3a224fad93f644c7c5265, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360570181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440868781 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1413468762635840, guid: 7931f9fe46f7e894886208699bccf6d3,
