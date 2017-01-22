@@ -5,6 +5,7 @@ public class Barrel : MonoBehaviour {
 	public float activationTime;
 	public int damage;
 	public GameObject particleExplosion;
+
 	void Update () {
 		if(activationTime > 0){
 			activationTime -= Time.deltaTime;

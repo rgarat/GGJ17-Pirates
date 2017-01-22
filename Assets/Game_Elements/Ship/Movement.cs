@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour {
     public int playerNumber;
     public XboxController controller;
 
+
+
 	void Start () {
 		rig = GetComponent<Rigidbody> ();
 	}

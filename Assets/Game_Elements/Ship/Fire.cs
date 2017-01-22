@@ -26,7 +26,12 @@ public class Fire : MonoBehaviour {
 
     public XboxController controller;
 
+	public AudioClip fireSound;
+
+	AudioSource audioSource;
+
 	void Start(){
+		audioSource = gameObject.GetComponent<AudioSource> ();
 		shootForce = minChargeShoot;
 	}
 
@@ -40,6 +45,7 @@ public class Fire : MonoBehaviour {
 		
 		if (XCI.GetButtonUp(XboxButton.X, controller) && shoots > 0) {
 			shoots--;
+			SoundFire ();
 			for(int c = 0; c < cannons.Length; c ++) {
 				if (cannons [c] != null) {
 					if (fireParticle != null) {
@@ -75,5 +81,10 @@ public class Fire : MonoBehaviour {
 
 	void ResetShootForce(){
 		shootForce = minChargeShoot;
+	}
+
+	void SoundFire(){
+		audioSource.clip = fireSound;
+		audioSource.Play ();
 	}
 }
