@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using XboxCtrlrInput;
+using Random = UnityEngine.Random;
 
 public class Fire : MonoBehaviour {
 
@@ -29,6 +31,7 @@ public class Fire : MonoBehaviour {
 	public AudioClip fireSound;
 
 	AudioSource audioSource;
+    [NonSerialized] public GameController gameController;
 
 	void Start(){
 		audioSource = gameObject.GetComponent<AudioSource> ();
@@ -36,6 +39,11 @@ public class Fire : MonoBehaviour {
 	}
 
 	void Update () {
+
+	    if (gameController.paused)
+	    {
+	        return;
+	    }
 
 		if (XCI.GetButton(XboxButton.X, controller) && shoots > 0) {
 			if (shootForce < maxChargeShoot) {

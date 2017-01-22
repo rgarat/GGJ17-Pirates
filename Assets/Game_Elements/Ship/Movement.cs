@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour {
     public int playerNumber;
     public XboxController controller;
 
-
+    public GameController gameController;
 
 	void Start () {
 		rig = GetComponent<Rigidbody> ();
@@ -27,6 +27,12 @@ public class Movement : MonoBehaviour {
 
 
 	void Update () {
+
+	    if (gameController.paused)
+	    {
+	        return;
+	    }
+
 
 
 	    if (XCI.GetButton(XboxButton.A, controller))

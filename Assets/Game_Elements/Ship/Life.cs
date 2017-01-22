@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 
 public class Life : MonoBehaviour {
 	public int life = 100;
+
+    [NonSerialized] public int maxLife;
+
 	public float limitFall;
 	public float incl;
 	public float limitInc;
@@ -20,6 +24,7 @@ public class Life : MonoBehaviour {
 	private float timer = 0;
 
 	public GameObject[] particlesSmoke;
+	[NonSerialized] public GameController gameController;
 
 
 	void Start(){
@@ -27,6 +32,7 @@ public class Life : MonoBehaviour {
 			var emitter = particlesSmoke [i].GetComponent<ParticleSystem> ().emission;
 			emitter.enabled = false;
 		}
+		maxLife = life;
 
 	}
 
