@@ -1088,10 +1088,11 @@ MonoBehaviour:
   - {fileID: 1387873688896602}
   - {fileID: 1057513323580130}
   - {fileID: 1627361298893998}
-  timerToSafe: 2.5
+  timerToSafe: 5
   pressTimes: 10
   krakenY: 0.5
   controller: 0
+  timeToDissapear: 10
 --- !u!114 &114545518849360072
 MonoBehaviour:
   m_ObjectHideFlags: 1

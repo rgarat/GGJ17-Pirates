@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Pirates.Ocean;
-using UnityEditor;
 using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour

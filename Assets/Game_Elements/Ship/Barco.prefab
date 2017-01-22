@@ -5274,13 +5274,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b33029e297e5d48bc81d8ddea10259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMaxima: 4
+  velocidadMaxima: 6
   aceleracion: 50
   velocidadGiroMovimiento: 2
   velocidadGiroQuieto: 0.5
   factorRozamientoAgua: 0.5
   playerNumber: 0
   controller: 0
+  gameController: {fileID: 0}
 --- !u!114 &11498604
 MonoBehaviour:
   m_ObjectHideFlags: 1

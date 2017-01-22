@@ -19,33 +19,49 @@ public class Kraken : MonoBehaviour {
 
 	public XboxController controller;
 
+    public float timeToDissapear;
+
 	void Start () {
 		
 	}
 
 	void Update () {
-		if (active == true) {
-			timer += Time.deltaTime;
-			if (timer <= timerToSafe) {
-				if (XCI.GetButtonDown (XboxButton.A, XboxController.All)) {
-					press++;
-				}
-			}
-			if (press >= pressTimes) {
-				active = false;
-				KrakenFail ();
-			}
-			if (timer > timerToSafe){
-				active = false;
-				if (press < pressTimes) {
-					ship.GetComponent<Life> ().life_rest (100);
-					for (int count = 0; count < tentacles.Length; count++) {
-						tentacles [count].GetComponent<Animator> ().Play ("Anim_Kraken_Win");
-					}
-				}
-			}
-
-		}
+	    if (active == true)
+	    {
+	        timer += Time.deltaTime;
+	        if (timer <= timerToSafe)
+	        {
+	            if (XCI.GetButtonDown(XboxButton.A, XboxController.All))
+	            {
+	                press++;
+	            }
+	        }
+	        if (press >= pressTimes)
+	        {
+	            active = false;
+	            KrakenFail();
+	        }
+	        if (timer > timerToSafe)
+	        {
+	            active = false;
+	            if (press < pressTimes)
+	            {
+	                ship.GetComponent<Life>().life_rest(100);
+	                for (int count = 0; count < tentacles.Length; count++)
+	                {
+	                    tentacles[count].GetComponent<Animator>().Play("Anim_Kraken_Win");
+	                }
+	            }
+	        }
+	    }
+	    else
+	    {
+	        timer += Time.deltaTime;
+	        if (timer > timeToDissapear)
+	        {
+	            GameObject.Destroy(this.gameObject);
+	        }
+	    }
 	}
 
 	void Attack(){
@@ -86,4 +102,10 @@ public class Kraken : MonoBehaviour {
 			Attack ();
 		}
 	}
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(this.transform.position, 2);
+    }
 }

@@ -48,9 +48,18 @@ public class GameController : MonoBehaviour
 
 
 
+    public GameObject krakenPrefab;
+    public Transform[] krakenLocations;
+
+    public float krakenRandomTime;
+
+
+    private float krakenCounter = 0;
+
 	// Use this for initialization
 	void Start ()
 	{
+	    krakenCounter = krakenRandomTime;
 	    cameras = new Camera[startPositons.Length];
 
 
@@ -108,6 +117,10 @@ public class GameController : MonoBehaviour
 
 	}
 
+
+
+    
+
 	// Update is called once per frame
     void Update()
     {
@@ -126,12 +139,27 @@ public class GameController : MonoBehaviour
             Time.timeScale = 1;
         }
 
+        #if UNITY_EDITOR
         if (XCI.GetButton(XboxButton.Back))
         {
             foreach (var barco in GameObject.FindObjectsOfType<Movement>())
             {
                 barco.velocidadMaxima = 10;
             }
+        }
+        #endif
+
+        krakenCounter -= Time.deltaTime;
+        if (krakenCounter < 0)
+        {
+            //create kraken
+            var kraken = GameObject.Instantiate(krakenPrefab, ocean.transform);
+            var location = krakenLocations[UnityEngine.Random.Range(0, krakenLocations.Length)].localPosition;
+            kraken.transform.localPosition = location;
+
+
+            krakenCounter = UnityEngine.Random.Range(0.8f * krakenRandomTime, 1.2f * krakenRandomTime);
+
         }
     }
 
