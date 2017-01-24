@@ -154,7 +154,11 @@ MonoBehaviour:
     y: 0
     width: 0.5
     height: 0.5
-  shipsTextures: []
+  shipsTextures:
+  - {fileID: 2800000, guid: 49a9f70e2b96da2438f63e38e69ab551, type: 3}
+  - {fileID: 2800000, guid: b0a5b3ac378cdd94f85856f61a6f0a43, type: 3}
+  - {fileID: 2800000, guid: 68aa3bd2a4297704e95ec98027ad0d85, type: 3}
+  - {fileID: 2800000, guid: c3d8046c87bdb1e47a7a8e5dfdfbc580, type: 3}
   portraits:
   - {fileID: 21300000, guid: 424f471e44f077b4aa2fd5a7d4c5cee5, type: 3}
   - {fileID: 21300000, guid: fae429b7ddb5e6b4c92e52d8f76d3fbe, type: 3}

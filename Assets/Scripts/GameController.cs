@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using HUD;
 using Pirates.Ocean;
 using UnityEngine;
@@ -73,8 +74,17 @@ public class GameController : MonoBehaviour
 	        lookAt.target = go.transform;
 	        lookAt.ocean = ocean;
 
-			if (shipsTextures.Length > 0) {
-				go.GetComponentInChildren<Renderer> ().material.mainTexture = shipsTextures [i];
+			if (shipsTextures.Length > 0)
+			{
+			    var renderersToChange = go.GetComponentsInChildren<Renderer>()
+			        .Where(renderer => renderer.sharedMaterial.mainTexture == shipsTextures[0])
+			        .ToList();
+
+			    var newMaterial = renderersToChange[0].material;
+			    newMaterial.mainTexture = shipsTextures[i];
+			    renderersToChange.ForEach(renderer1 => renderer1.material = newMaterial);
+
+
 			}
 
 	        var camera = cameraGO.GetComponent<Camera>();
