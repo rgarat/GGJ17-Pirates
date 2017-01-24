@@ -834,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ocean: {fileID: 571142193}
   cuadSize: 2.5
+  orderInLayer: -102
 --- !u!23 &571142191
 MeshRenderer:
   m_ObjectHideFlags: 0

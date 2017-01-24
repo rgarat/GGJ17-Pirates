@@ -28,6 +28,8 @@ namespace Pirates.Ocean.OceanView
 
         public float cuadSize;
 
+        public int orderInLayer;
+
         void Awake()
         {
             this.meshRenderer = this.GetComponent<MeshRenderer>();
@@ -40,6 +42,8 @@ namespace Pirates.Ocean.OceanView
 
             this.mesh1.hideFlags = HideFlags.DontSaveInEditor;
             this.mesh2.hideFlags = HideFlags.DontSaveInEditor;
+
+            this.meshRenderer.sortingOrder = orderInLayer;
         }
 
 
